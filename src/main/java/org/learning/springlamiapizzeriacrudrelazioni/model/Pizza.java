@@ -1,4 +1,4 @@
-package org.learning.springlamiapizzeriacrud.model;
+package org.learning.springlamiapizzeriacrudrelazioni.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 import java.net.URL;
+import java.util.List;
 
 @Entity
 @Table(name = "pizzas")
@@ -26,6 +27,8 @@ public class Pizza {
     @NotNull(message = "Inserisci un prezzo adatto")
     @Min(1)
     private BigDecimal price;
+    @OneToMany(mappedBy = "pizza")
+    private List<Offerta> offerte;
 
     public String getName() {
         return name;
@@ -65,5 +68,13 @@ public class Pizza {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public List<Offerta> getOfferte() {
+        return offerte;
+    }
+
+    public void setOfferte(List<Offerta> offerte) {
+        this.offerte = offerte;
     }
 }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+    <title>Crea Offerta</title>
+</head>
+<body>
+<main class="container">
+    <h1>Crea offerta for <span th:text="${pizza.name}"></span></h1>
+    <hr>
+    <!-- form di creazione di un Borrowing -->
+    <form
+            id="create-offerta"
+            method="post"
+            th:action="@{/offerte/create}"
+            th:object="${offerta}"
+            class="row gy-3"
+    >
+        <input type="hidden" th:field="*{pizza}">
+        <div class="col-6">
+            <label class="form-label" for="dataInizio">Data Inizio</label>
+            <input class="form-control" type="date" id="dataInizio" th:field="*{dataInizio}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('dataInizio')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('dataInizio')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-6">
+            <label class="form-label" for="dataFine">Data Fine</label>
+            <input class="form-control" type="date" id="dataFine" th:field="*{dataFine}"
+                   th:errorClass="is-invalid">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('dataFine')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('dataFine')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12">
+            <label class="form-label" for="titoloOfferta">Titolo</label>
+            <textarea class="form-control" id="titoloOfferta" th:field="*{titoloOfferta}"
+                      th:errorClass="is-invalid"></textarea>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('titoloOfferta')}">
+                <ul>
+                    <li th:each="err : ${#fields.errors('titoloOfferta')}" th:text="${err}"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a class="btn btn-primary" th:href="@{/pizza/show/{id}(id=${pizza.id})}">Cancel</a>
+        </div>
+    </form>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

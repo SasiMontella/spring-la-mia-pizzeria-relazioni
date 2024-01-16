@@ -1,8 +1,8 @@
-package org.learning.springlamiapizzeriacrud.controller;
+package org.learning.springlamiapizzeriacrudrelazioni.controller;
 
 import jakarta.validation.Valid;
-import org.learning.springlamiapizzeriacrud.model.Pizza;
-import org.learning.springlamiapizzeriacrud.repository.PizzaRepository;
+import org.learning.springlamiapizzeriacrudrelazioni.model.Pizza;
+import org.learning.springlamiapizzeriacrudrelazioni.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
