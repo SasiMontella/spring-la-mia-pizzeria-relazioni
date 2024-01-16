@@ -1,0 +1,6 @@
+INSERT INTO pizzas (name, description, photo, price) VALUES('Margherita', 'Pomodoro San Marzano e mozzarella','https://www.alimentinutrizione.it/images/tabelle/PC0001.jpg', 6.00);
+INSERT INTO pizzas (name, description, photo, price) VALUES('Marinara', 'Pomodoro San Marzano, origano, aglio','https://it.ooni.com/cdn/shop/articles/marinara-for-web.jpg?crop=center&height=800&v=1635275961&width=800', 4.00);
+INSERT INTO pizzas (name, description, photo, price) VALUES('Diavola', 'Pomodoro San Marzano, mozzarella, salamino piccante','https://www.ristorantepizzeriajanna.com/wp-content/uploads/2017/09/pizza_diavola.jpg', 7.00);
+INSERT INTO pizzas (name, description, photo, price) VALUES('Capricciosa', 'Pomodoro San Marzano, olive nere, funghi e prosciutto cotto','https://i0.wp.com/pizzabelga.com/wp-content/uploads/2018/12/capricciosa.jpg?fit=500%2C500&ssl=1', 9.00);
+INSERT INTO pizzas (name, description, photo, price) VALUES('Crocchè', 'Provola di Agerola, crocchè artigianali, panna e prosciutto cotto ','https://media-cdn.tripadvisor.com/media/photo-s/0f/6a/c8/fd/pizza-con-mozzarella.jpg', 9.50);
+INSERT INTO pizzas (name, description, photo, price) VALUES('4 formaggi', 'Mozzarella, provola di Agerola, gorgonzola e Emmental ','https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2017/06/3234_Pizza.jpg?resize=895%2C616&ssl=1', 8.50);
