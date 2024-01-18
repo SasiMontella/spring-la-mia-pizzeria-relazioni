@@ -4,3 +4,17 @@ INSERT INTO pizzas (name, description, photo, price) VALUES('Diavola', 'Pomodoro
 INSERT INTO pizzas (name, description, photo, price) VALUES('Capricciosa', 'Pomodoro San Marzano, olive nere, funghi e prosciutto cotto','https://i0.wp.com/pizzabelga.com/wp-content/uploads/2018/12/capricciosa.jpg?fit=500%2C500&ssl=1', 9.00);
 INSERT INTO pizzas (name, description, photo, price) VALUES('Crocchè', 'Provola di Agerola, crocchè artigianali, panna e prosciutto cotto ','https://media-cdn.tripadvisor.com/media/photo-s/0f/6a/c8/fd/pizza-con-mozzarella.jpg', 9.50);
 INSERT INTO pizzas (name, description, photo, price) VALUES('4 formaggi', 'Mozzarella, provola di Agerola, gorgonzola e Emmental ','https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2017/06/3234_Pizza.jpg?resize=895%2C616&ssl=1', 8.50);
+--ingredienti
+INSERT INTO ingredienti (name) VALUES('mozzarella');
+INSERT INTO ingredienti (name) VALUES('pomodoro');
+INSERT INTO ingredienti (name) VALUES('basilico');
+INSERT INTO ingredienti (name) VALUES('provola');
+INSERT INTO ingredienti (name) VALUES('ricotta');
+INSERT INTO ingredienti (name) VALUES('olio');
+INSERT INTO ingredienti (name) VALUES('salame piccante');
+INSERT INTO ingredienti (name) VALUES('gorgonzola');
+INSERT INTO ingredienti (name) VALUES('funghi');
+INSERT INTO ingredienti (name) VALUES('origano');
+INSERT INTO ingredienti (name) VALUES('aglio');
+INSERT INTO ingredienti (name) VALUES('cipolla');
+INSERT INTO ingredienti (name) VALUES('peperoncino');

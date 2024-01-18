@@ -13,6 +13,7 @@
     <title>Edit Offerta</title>
 </head>
 <body>
+<nav th:replace="fragments/navbar :: topNavbar('pizza')"></nav>
 <main class="container">
 <h1>Edit Offerta for <span th:text="${offerta.pizza.name}"></span></h1>
     <hr>

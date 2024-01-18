@@ -2,6 +2,7 @@ package org.learning.springlamiapizzeriacrudrelazioni.controller;
 
 import jakarta.validation.Valid;
 import org.learning.springlamiapizzeriacrudrelazioni.model.Pizza;
+import org.learning.springlamiapizzeriacrudrelazioni.repository.IngredientiRepository;
 import org.learning.springlamiapizzeriacrudrelazioni.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,8 @@ import java.util.Optional;
 public class PizzaController {
     @Autowired
     private PizzaRepository pizzarepository;
+    @Autowired
+    private IngredientiRepository ingredientirepository;
 
     @GetMapping
     public String index(Model model) {
@@ -45,12 +48,14 @@ public class PizzaController {
     public String create(Model model) {
         Pizza pizza = new Pizza();
         model.addAttribute("pizza", new Pizza());
+        model.addAttribute("ingredientiList", ingredientirepository.findAll());
         return "pizzas/create";
     }
 
     @PostMapping("/create")
-    public String store(@Valid @ModelAttribute("pizza") Pizza formpizza, BindingResult bindingresult) {
+    public String store(@Valid @ModelAttribute("pizza") Pizza formpizza, BindingResult bindingresult, Model model) {
         if (bindingresult.hasErrors()) {
+            model.addAttribute("ingredientiList", ingredientirepository.findAll());
             return "pizzas/create";
         }
         Pizza savedpizza = pizzarepository.save(formpizza);
@@ -62,6 +67,7 @@ public class PizzaController {
         Optional<Pizza> result = pizzarepository.findById(id);
         if (result.isPresent()) {
             model.addAttribute("pizza", result.get());
+            model.addAttribute("ingredientiList", ingredientirepository.findAll());
             return "pizzas/edit";
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pizza with id " + id + " not found");

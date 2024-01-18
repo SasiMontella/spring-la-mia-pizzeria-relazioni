@@ -12,6 +12,7 @@
     <title>Pizzeria Mammamia</title>
 </head>
 <body>
+<nav th:replace="fragments/navbar :: topNavbar('pizza')"></nav>
 <!-- Attributi: pizzalist(List<Pizza>) -->
 <div class="container">
     <div    th:if="${redirectMessage != null}"

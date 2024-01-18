@@ -29,6 +29,8 @@ public class Pizza {
     private BigDecimal price;
     @OneToMany(mappedBy = "pizza")
     private List<Offerta> offerte;
+    @ManyToMany
+    private List<Ingredienti> ingredienti;
 
     public String getName() {
         return name;
@@ -76,5 +78,13 @@ public class Pizza {
 
     public void setOfferte(List<Offerta> offerte) {
         this.offerte = offerte;
+    }
+
+    public List<Ingredienti> getIngredienti() {
+        return ingredienti;
+    }
+
+    public void setIngredienti(List<Ingredienti> ingredienti) {
+        this.ingredienti = ingredienti;
     }
 }
